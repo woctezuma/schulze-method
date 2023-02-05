@@ -1,4 +1,5 @@
 files: \.(py|yaml|txt)$
+default_stages: [commit]
 repos:
 
 -   repo: https://github.com/pre-commit/pre-commit-hooks
@@ -7,9 +8,21 @@ repos:
     - id: trailing-whitespace
     - id: end-of-file-fixer
 
+-   repo: https://github.com/psf/black
+    rev: 23.1.0
+    hooks:
+    - id: black
+      stages: [commit, manual]
+      args: [--skip-string-normalization]
+
 -   repo: https://github.com/charliermarsh/ruff-pre-commit
     rev: v0.0.241
     hooks:
     - id: ruff
       args: [--fix, --target-version, "py311", --select, "ALL", --ignore, "ANN,C90,D,E501,PT,T20,Q,SLF"]
 
+-   repo: https://github.com/asottile/add-trailing-comma
+    rev: v2.4.0
+    hooks:
+    - id: add-trailing-comma
+      stages: [commit, manual]
