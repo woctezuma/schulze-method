@@ -22,8 +22,11 @@ class SchulzeTest(unittest.TestCase):
         other_names = (other_name for other_name in 'abcde' if other_name != name)
         for other_name, expected_value in zip(other_names, expected_values):
             actual_value = matrix.get((name, other_name), 0)
-            self.assertEqual(expected_value, actual_value,
-                             f'matrix({name}, {other_name})={actual_value}, expected {expected_value}')
+            self.assertEqual(
+                expected_value,
+                actual_value,
+                f'matrix({name}, {other_name})={actual_value}, expected {expected_value}',
+            )
 
     def _compute_d_wikipedia(self):
         """Computes the d array found at http://en.wikipedia.org/wiki/Schulze_method."""

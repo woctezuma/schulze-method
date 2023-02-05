@@ -21,7 +21,7 @@ def _add_remaining_ranks(d, candidate_name, remaining_ranks, weight):
 
 def _add_ranks_to_d(d, ranks, weight):
     for i, rank in enumerate(ranks):
-        remaining_ranks = ranks[i + 1:]
+        remaining_ranks = ranks[i + 1 :]
         for candidate_name in rank:
             _add_remaining_ranks(d, candidate_name, remaining_ranks, weight)
 
@@ -58,7 +58,8 @@ def _compute_p(d, candidate_names):
                         curr_value = p.get((candidate_name2, candidate_name3), 0)
                         new_value = min(
                             p.get((candidate_name2, candidate_name1), 0),
-                            p.get((candidate_name1, candidate_name3), 0))
+                            p.get((candidate_name1, candidate_name3), 0),
+                        )
                         if new_value > curr_value:
                             p[candidate_name2, candidate_name3] = new_value
 
