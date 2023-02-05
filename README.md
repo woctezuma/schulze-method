@@ -1,4 +1,9 @@
-# Schulze Method [![Build status with Github Action][build-image-action]][build-action] [![Python 3][python3-image]][pyup] [![Code coverage][codecov-image]][codecov] [![Code quality][codacy-image]][codacy]
+# Schulze Method
+
+[![Build status with Github Action][build-image-action]][build-action]
+[![Python 3][python3-image]][pyup]
+[![Code coverage][codecov-image]][codecov]
+[![Code quality][codacy-image]][codacy]
 
 This repository provides a Python implementation of the [Schulze method](http://en.wikipedia.org/wiki/Schulze_method).
 
