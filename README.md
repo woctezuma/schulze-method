@@ -8,7 +8,7 @@ This repository provides a Python implementation of the [Schulze method](http://
 
 ## Requirements
 
-- Install the latest version of [Python 3.X](https://www.python.org/downloads/).
+- Install the latest version of [Python 3.X](https://www.python.org/downloads/) (at least version 3.10).
 
 - Install the required packages:
 
