@@ -20,7 +20,11 @@ class SchulzeTest(unittest.TestCase):
 
     def _assert_row(self, matrix, name, expected_values):
         other_names = (other_name for other_name in 'abcde' if other_name != name)
-        for other_name, expected_value in zip(other_names, expected_values, strict=True):
+        for other_name, expected_value in zip(
+            other_names,
+            expected_values,
+            strict=True,
+        ):
             actual_value = matrix.get((name, other_name), 0)
             self.assertEqual(
                 expected_value,
