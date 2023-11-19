@@ -1,5 +1,5 @@
 files: \.(py|yaml|txt)$
-default_stages: [commit]
+default_stages: [commit, manual]
 repos:
 
 -   repo: https://github.com/pre-commit/pre-commit-hooks
@@ -8,15 +8,28 @@ repos:
     - id: trailing-whitespace
     - id: end-of-file-fixer
 
--   repo: https://github.com/charliermarsh/ruff-pre-commit
+-   repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.1.6
     hooks:
     - id: ruff
-      args: [--fix, --target-version, "py312", --select, "ALL", --ignore, "ANN,C90,D,E501,PT,SLF", --exit-non-zero-on-fix]
+      args: [
+        --fix,
+        --unsafe-fixes,
+        --target-version, "py312",
+        --select, "ALL",
+        --ignore, "ANN,C90,D,E501,PT,SLF"
+      ]
     - id: ruff-format
 
--   repo: https://github.com/asottile/add-trailing-comma
-    rev: v3.1.0
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.7.0
     hooks:
-    - id: add-trailing-comma
-      stages: [commit, manual]
+    - id: mypy
+      stages: [manual]
+
+-   repo: https://github.com/dosisod/refurb
+    rev: v1.24.0
+    hooks:
+    - id: refurb
+      args: [--python-version, "3.12"]
+      stages: [manual]
